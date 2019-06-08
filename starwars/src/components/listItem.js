@@ -18,12 +18,14 @@ function returnLinks(input) {
 const ListItem = (props) => {
     var character = JSON.parse( "{" + props.character + "}" );
     return (
-        <div className="character">
+        <div className="character" key={props.key} >
+            <div className="half-section">
             <h3 className="character-name">{ character.name }</h3>
             <p>Born: { character.birth_year}</p>
             <p>{character.gender}, { character.height }cm, { character.mass }kg</p>
             <p>{ character.hair_color } hair, { character.eye_color } eyes, {character.skin_color} skin</p>
-            
+            </div>
+            <div class="half-section">
             <h5>Links:</h5>
             <p>
                 <a href={ character.url } >Main</a> | 
@@ -32,7 +34,7 @@ const ListItem = (props) => {
             <p> Films: { returnLinks(character.films).map(item => { return <a href={item}>x</a>}) } </p>
             <p> Species: { returnLinks(character.species).map(item => { return <a href={item}>x</a>}) } </p>
             <p> Vehicles: { returnLinks(character.vehicles).map(item => { return <a href={item}>x</a>}) }  </p>
-
+            </div>
         </div>
     );
 }
