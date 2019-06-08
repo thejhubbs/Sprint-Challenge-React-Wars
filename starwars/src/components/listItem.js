@@ -25,7 +25,7 @@ const ListItem = (props) => {
             <p>{character.gender}, { character.height }cm, { character.mass }kg</p>
             <p>{ character.hair_color } hair, { character.eye_color } eyes, {character.skin_color} skin</p>
             </div>
-            <div class="half-section">
+            <div className="half-section">
             <h5>Links:</h5>
             <p>
                 <a href={ character.url } >Main</a> | 
