@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import './components/StarWars.css'
+import List from './components/list';
 
 class App extends Component {
   constructor() {
@@ -28,11 +30,14 @@ class App extends Component {
         throw new Error(err);
       });
   };
-
+  //name, height, mass, hair_color, skin_color, eye_color, birth_year, gender, homeworld, films, species, vehicles, starships, created, edited, url
+        
   render() {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
+        <List characters={ this.state.starwarsChars  } />
+        
       </div>
     );
   }
